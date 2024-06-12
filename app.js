@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const errorHandler = require("./handlers/errorHandler");
 const mongoose = require("mongoose");
+const userRoutes = require("./models/modules/users/users.routes");
 
 require("dotenv").config();
 
@@ -24,11 +25,15 @@ app.get("/", (req, res) => {
   res.send("Hello App!!!");
 });
 
-// Database Models 
+// Database Models
 
-require("./models/usersModel")
+require("./models/usersModel");
 
 app.use(express.json());
+
+// Routes
+
+app.use("/api/users", userRoutes);
 
 // Error Handler
 

@@ -2,10 +2,10 @@
   "name": "expense_tracker_pro",
   "version": "1.0.0",
   "description": "expense tracking app server code",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon app.js"
   },
   "author": "SarthakYelne",
   "license": "ISC",
