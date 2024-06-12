@@ -4,7 +4,7 @@ const express = require("express");
 const cors = require("cors");
 const errorHandler = require("./handlers/errorHandler");
 const mongoose = require("mongoose");
-const userRoutes = require("./models/modules/users/users.routes");
+const userRoutes = require("./modules/users/users.routes");
 
 require("dotenv").config();
 
