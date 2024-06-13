@@ -5,6 +5,7 @@ const cors = require("cors");
 const errorHandler = require("./handlers/errorHandler");
 const mongoose = require("mongoose");
 const userRoutes = require("./modules/users/users.routes");
+const transactionRoutes = require("./modules/transactions/transactions.routes");
 
 require("dotenv").config();
 
@@ -26,17 +27,16 @@ app.get("/", (req, res) => {
 });
 
 // Database Models
-
 require("./models/usersModel");
+require("./models/transactionModel");
 
 app.use(express.json());
 
 // Routes
-
 app.use("/api/users", userRoutes);
+app.use("/api/transactions", transactionRoutes);
 
 // Error Handler
-
 app.use(errorHandler);
 
 app.listen(3000, () => {
