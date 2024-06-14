@@ -49,7 +49,7 @@ const register = async (req, res) => {
     from: "info@expensetrackerpro.com",
     text: "Welcome to the Expense Tracker Pro Web App!. Happy to onboard you to your personal expense tracking app for mananging expenses!!!",
     html: "<h1>Welcome to the Expense Tracker Pro Web App!</h1> <br> <br> <h3>Happy to onboard you to your personal expense tracking app for mananging expenses!!!</h3>",
-    subject: "Welcome to Expense Tracker Pro!!!",
+    subject: "Welcome to Expense Tracker Pro!",
   });
 
   res.status(200).json({

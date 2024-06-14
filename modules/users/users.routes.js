@@ -3,6 +3,7 @@ const register = require("./controllers/register");
 const login = require("./controllers/login");
 const userDashboard = require("./controllers/userDashboard");
 const auth = require("../../middlewares/auth");
+const forgetPassword = require("./controllers/forgetPassword");
 
 const userRoutes = express.Router();
 
@@ -10,6 +11,7 @@ const userRoutes = express.Router();
 
 userRoutes.post("/register", register);
 userRoutes.post("/login", login);
+userRoutes.post("/forgetPW", forgetPassword)
 
 userRoutes.use(auth);
 
