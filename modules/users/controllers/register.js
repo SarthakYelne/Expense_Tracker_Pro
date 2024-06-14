@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
 const jwtManager = require("../../../managers/jwtManager");
-const nodemailer = require("nodemailer");
+const emailManager = require("../../../managers/email.Manager");
 
 const register = async (req, res) => {
   const usersModel = mongoose.model("users");
@@ -34,23 +33,12 @@ const register = async (req, res) => {
 
   const accessToken = jwtManager(createdUser);
 
-  // Nodemailer for sending emails and password resets
-  var transport = nodemailer.createTransport({
-    host: "sandbox.smtp.mailtrap.io",
-    port: 2525,
-    auth: {
-      user: "47a922284e2c41",
-      pass: "91b85ab1b5b78f",
-    },
-  });
-
-  transport.sendMail({
-    to: createdUser.email,
-    from: "info@expensetrackerpro.com",
-    text: "Welcome to the Expense Tracker Pro Web App!. Happy to onboard you to your personal expense tracking app for mananging expenses!!!",
-    html: "<h1>Welcome to the Expense Tracker Pro Web App!</h1> <br> <br> <h3>Happy to onboard you to your personal expense tracking app for mananging expenses!!!</h3>",
-    subject: "Welcome to Expense Tracker Pro!",
-  });
+  await emailManager(
+    createdUser.email,
+    "Welcome to the Expense Tracker Pro Web App!. Happy to onboard you to your personal expense tracking app for mananging expenses!!!",
+    "<h1>Welcome to the Expense Tracker Pro Web App!</h1> <br> <br> <h3>Happy to onboard you to your personal expense tracking app for mananging expenses!!!</h3>",
+    "Welcome to Expense Tracker Pro!"
+  );
 
   res.status(200).json({
     status: "success",
