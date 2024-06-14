@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 const jwtManager = require("../../../managers/jwtManager");
 const emailManager = require("../../../managers/email.Manager");
 

@@ -4,13 +4,13 @@ const userDashboard = async (req, res) => {
   const usersModel = mongoose.model("users");
   const transactionsModel = mongoose.model("transactions");
 
-  console.log(req.user);
+  // console.log(req.user);
 
   const getUser = await usersModel
     .findOne({
       _id: req.user._id,
     })
-    .select("-password");
+    .select("-password -reset_code");
 
   const transactions = await transactionsModel
     .find({
