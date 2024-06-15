@@ -36,6 +36,13 @@ app.use(express.json());
 app.use("/api/users", userRoutes);
 app.use("/api/transactions", transactionRoutes);
 
+app.all("*", (req, res) => {
+  res.status(404).json({
+    status: "failed",
+    message: "Not Found!",
+  });
+});
+
 // Error Handler
 app.use(errorHandler);
 
