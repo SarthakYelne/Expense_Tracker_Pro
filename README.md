@@ -4,7 +4,7 @@ Expanse Tracker Pro is a comprehensive backend server application designed to ma
 
 ## Live Demo
 
-Check out the Server application [Expense_Tracker_Pro](https://expense-tracker-pro-server.onrender.com/).
+Check out the Server application [expense-tracker-pro-server](https://expense-tracker-pro-server.onrender.com/)
 
 ## Features
 
