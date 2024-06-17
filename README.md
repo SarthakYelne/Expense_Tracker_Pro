@@ -36,8 +36,8 @@ To set up the project locally, follow these steps:
 1. **Clone the Repository**:
    
    ```bash
-   git clone https://github.com/yourusername/expanse-tracker-pro.git
-   cd expanse-tracker-pro
+   git clone https://github.com/SarthakYelne/Expense_Tracker_Pro
+   cd expense-tracker-pro
    ```
    
 2. **Set up the backend**
